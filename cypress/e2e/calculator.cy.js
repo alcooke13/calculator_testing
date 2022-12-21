@@ -3,12 +3,12 @@ describe("Calculator", () => {
     cy.visit("http://localhost:3000");
   });
 
-  xit('should have working number buttons', () => {
+  it('should have working number buttons', () => {
     cy.get('#number2').click();
     cy.get('.display').should('contain', '2');
   });
 
-  xit('should have the number being display update running total', () => {
+  it('should have the number being display update running total', () => {
     const displayRunningTotal = cy.get('#running-total');
     displayRunningTotal.should('contain', 0);
     cy.get('#number2').click();
@@ -16,7 +16,7 @@ describe("Calculator", () => {
 
   });
 
-  xit('should update display based on the result of operation', () => {
+  it('should update display based on the result of operation', () => {
     const displayRunningTotal = cy.get('#running-total');
     cy.get('#number3').click();
     cy.get('#operator_add').click();
@@ -27,7 +27,7 @@ describe("Calculator", () => {
     
   });
 
-  xit('should be able to chain multiple operators', () => {
+  it('should be able to chain multiple operators', () => {
     const displayRunningTotal = cy.get('#running-total');
     cy.get('#number8').click();
     cy.get('#operator-multiply').click();
@@ -40,7 +40,7 @@ describe("Calculator", () => {
 
   });
 
-  xit('should calculate and display large number', () => {
+  it('should calculate and display large number', () => {
     const displayRunningTotal = cy.get('#running-total');
     cy.get('#number8').click();
     cy.get('#number5').click();
